@@ -2,7 +2,7 @@ const towerLines = document.querySelectorAll(".tower .line");
 const rubble = document.querySelector(".rubble");
 const announcer = document.getElementById("announcer");
 
-
+// Tracks where we are in the poem:
 let step = 0;
 
 function announce(text) {
@@ -20,11 +20,11 @@ function showFirstLine() {
 function advance() {
     step++;
 
-    if (step < towerLines.length) {
+    if (step < towerLines.length) {     // Steps 1-3: reveal the next line of the tower
         towerLines[step].classList.add("show");
         announce(towerLines[step].textContent);
 
-    } else if (step === towerLines.length) {
+    } else if (step === towerLines.length) {     // Step 4: collapse the tower and reveal the rubble
         towerLines.forEach(function (line) {
             line.classList.remove("show");
             line.classList.add("fall");
@@ -32,7 +32,7 @@ function advance() {
         rubble.classList.add("show");
         announce(rubble.textContent);
 
-    } else {
+    } else {     // Step 5: reset the poem and start over
         rubble.classList.remove("show");
         towerLines.forEach(function (line) {
             line.classList.remove("fall");
@@ -42,14 +42,14 @@ function advance() {
     }
 }
 
-
+// Advances the poem when the user clicks or presses Space/Enter.
 document.addEventListener("click", advance);
 document.addEventListener("keydown", function (event) {
-    if (event.target.closest("button") || event.repeat) return;
     if (event.key === " " || event.key === "Enter") {
         event.preventDefault();
         advance();
     }
 });
 
+// Show the first line of the poem when the page loads.
 showFirstLine();
