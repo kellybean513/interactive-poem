@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Falling Behind</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Notable&family=Rubik+Iso&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main class="poem">
+    <h1 class="sr-only">Falling Behind</h1>
+
+    <div class="tower">
+      <div class="line">Everyone towers over me</div>
+      <div class="line">And in my rush to catch up</div>
+      <div class="line">My foundation shakes and crumbles</div>
+      <div class="line">Until I am nothing</div>
+    </div>
+
+    <div class="line rubble">But rubble</div>
+  </main>
+
+  <!-- Live region: when its text changes, screen readers read it aloud. main.js writes each newly revealed line here, since the visual animation alone isn't announced. "polite" waits for a pause in speech. -->
+  <p id="announcer" class="sr-only" aria-live="polite"></p>
+
+
+
+  <footer class="hint">
+    Click or Press Space/Enter to Continue
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
